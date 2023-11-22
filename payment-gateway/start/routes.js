@@ -16,4 +16,14 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
+let kelas = 'javascript'
+
 Route.on('/').render('welcome')
+
+Route.get('/about', ({view, request, response}) => {
+    return view.render('pages.about', {kelas})
+})
+
+Route.get('/welcome', () => {
+    return 'Hello Adonis'
+})
